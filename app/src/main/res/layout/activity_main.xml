@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/animalTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/teal_200"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="cursive"
+        android:text="@string/fact_of_the_day"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/factTV"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:text="Some fact"
+        android:textColor="#8BC34A"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/catfactBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animalTV" />
+
+    //Dogside
+    <ImageButton
+        android:id="@+id/dogfactBtn"
+        android:layout_width="0dp"
+        android:onClick="dogfact"
+        android:layout_height="180dp"
+        android:src="@drawable/dog"
+        android:padding="18dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/dogTV"
+        app:layout_constraintLeft_toRightOf="@id/guideline2"
+        app:layout_constraintRight_toRightOf="parent" />
+    <TextView
+        android:id="@+id/dogTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/dog_fact"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/catTV" />
+
+    //Catside
+    <ImageButton
+        android:id="@+id/catfactBtn"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:onClick="catfact"
+        android:padding="18dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/cat"
+        app:layout_constraintBottom_toTopOf="@+id/catTV"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline2" />
+    <TextView
+        android:id="@+id/catTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cat Fact"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintRight_toLeftOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

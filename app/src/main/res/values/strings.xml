@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Dog or Cat Facts</string>
+    <string name="fact_of_the_day">Fact of the day -</string>
+    <string name="dog_fact">Dog Fact</string>
+</resources>
