@@ -37,24 +37,42 @@ class MainActivity : AppCompatActivity() {
         queue.add(jsonObjectRequest)
     }
 
-
     @SuppressLint("SetTextI18n")
     fun dogfact(view: View) {
-        val url = "https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=1"
-
+        val url = "https://dog-api.kinduff.com/api/facts"
         // Instantiate the RequestQueue.
         val queue = Volley.newRequestQueue(this)
-        val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
+        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
-                Log.d("Fact", response.optString(0))
-                factTV.text = response.getJSONObject(0).getString("fact")
+//                Log.d("Fact", response.optString("facts"))
+                factTV.text = response.getJSONArray("facts").getString(0)
                 animalTV.text = "Dog fact of the day -"
             },
             { error -> error.printStackTrace()
             }
         )
         //Add the request to the RequestQueue.
-        queue.add(jsonArrayRequest)
+        queue.add(jsonObjectRequest)
     }
+
+    //API not working
+//    @SuppressLint("SetTextI18n")
+//    fun dogfact(view: View) {
+//        val url = "https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=1"
+//
+//        // Instantiate the RequestQueue.
+//        val queue = Volley.newRequestQueue(this)
+//        val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
+//            { response ->
+//                Log.d("Fact", response.optString(0))
+//                factTV.text = response.getJSONObject(0).getString("fact")
+//                animalTV.text = "Dog fact of the day -"
+//            },
+//            { error -> error.printStackTrace()
+//            }
+//        )
+//        //Add the request to the RequestQueue.
+//        queue.add(jsonArrayRequest)
+//    }
 
 }
